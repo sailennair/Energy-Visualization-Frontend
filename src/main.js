@@ -8,10 +8,12 @@ import VueRouter from 'vue-router'
 import Routes from './routes/routes.js'
 import VueResource from 'vue-resource'
 import vSelect from 'vue-select'
+import datePicker from 'vue-bootstrap-datetimepicker'
+import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css';
 
 
 
-
+Vue.use(datePicker);
 Vue.use(VueResource)
 Vue.use(BootstrapVue) 
 Vue.use(VueRouter)
@@ -20,14 +22,14 @@ Vue.component('v-select', vSelect)
 
 
 const router = new VueRouter({
-  routes: Routes
+ routes: Routes
 });
 
 new Vue({
   el: '#app',
  
   render: h => h(App),
-  router: router
+ router: router
 })
 
 

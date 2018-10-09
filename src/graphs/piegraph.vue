@@ -1,19 +1,43 @@
 <template>
-<div>
-    <h1>Pie Graph Example</h1>
-    
-    <p>Pick the start date</p>
-    <datepicker  @selected="setstartdate"></datepicker>
-    <p>Pick the end date</p>
-    <datepicker  @selected="setenddate"></datepicker>
-<div>
- <v-select v-model="selected" :options="options"></v-select>  
- <button v-on:click.prevent="changelocation">ChangeLocation</button>
- <button v-on:click.prevent="get()">Get graph</button>
-</div >
-            <div >
+<div >
+    <pieintro></pieintro>
+
+<div class="pie-chart">
+     <br/>
+    <br/>
+   <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+          <h3 class="datepick" >Pick the start date</h3>
+          <datepicker  @selected="setstartdate" id="pie-start"></datepicker>
+          </div>
+          <div class="col-md-3">
+         <h3 class="datepick" >Pick the end date</h3>
+        <datepicker  @selected="setenddate" id="pie-end"></datepicker>
+      </div>
+    </div>
+  </div>
+
+<br/>
+ <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+          <h3 class="datepick" >Pick the location</h3>
+       <v-select v-model="selected" :options="options" id="pie-location"></v-select> 
+   <br/>
+  <button type="buton" class="btn btn-dark" v-on:click.prevent="get()">Get graph</button>
+      </div>
+    </div>
+ </div> 
+ <!-- <button v-on:click.prevent="changelocation">ChangeLocation</button> -->
+<br/>
+
+            <!-- <div style="background-color: 	#E0E0E0"> -->
     <canvas id='pie-chart'></canvas>
-            </div>
+            <!-- </div> -->
+             <br/>
+    <br/>
+</div>
 </div>
 </template>
 
@@ -21,7 +45,8 @@
 
 <script>
 import Datepicker from 'vuejs-datepicker';
-import moment from 'moment'
+import moment from 'moment';
+import pieintro from '../Introductions/pie-graph-intro.vue'
 
   
 export default {
@@ -44,10 +69,12 @@ export default {
     selected: {id: 1, label: 'Zesti_Lemonz'}
             
         }
+
     },
    
     components:{
-        Datepicker
+        Datepicker,
+        'pieintro' : pieintro
     },
     methods:{
         changelocation(){
@@ -65,6 +92,7 @@ export default {
         get(){
             //var labels = [];
            // var data1 = [];
+           this.changelocation()
            this.labels =[]
            this.data1 = []
          var query = 'http://127.0.0.1:5000/range/pi/' + this.selected.label +'/'+this.startdate +'/'+this.enddate;

@@ -1,30 +1,42 @@
 <template>
 <div>
-    <h1>This is just a heading for some graph data</h1>
-    <span style="display:inline-block; width: 40px;"></span>
-    <div style="width:50%">
-    <div style="width:25%">
-     Pick the start date
-     
-    <datepicker  @selected="setstartdate"></datepicker>
-    
+    <single-line-intro></single-line-intro>
+   <div class="single-line-chart">
+     <br/>
+    <br/>
+   <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+          <h3 class="datepick" >Pick the start date</h3>
+          <datepicker  @selected="setstartdate" id="pie-start"></datepicker>
+          </div>
+          <div class="col-md-3">
+         <h3 class="datepick" >Pick the end date</h3>
+        <datepicker  @selected="setenddate" id="pie-end"></datepicker>
+      </div>
     </div>
+  </div>
+
+<br/>
+ <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+          <h3 class="datepick" >Pick the location</h3>
+       <v-select v-model="selected" :options="options" id="pie-location"></v-select> 
+   <br/>
+  <button type="buton" class="btn btn-dark" v-on:click.prevent="get()">Get graph</button>
+      </div>
     </div>
+ </div> 
+ <!-- <button v-on:click.prevent="changelocation">ChangeLocation</button> -->
+<br/>
 
-
-    <p>Pick the end date</p>
-    <datepicker  @selected="setenddate"></datepicker>
-    <span style="display:block; height: 10px;"></span>
-<div style="width:200px">
- <v-select v-model="selected" :options="options"></v-select>  
- <span style="display:block; height: 10px;"></span>
- <button v-on:click.prevent="changelocation">ChangeLocation</button>
- <span style="display:block; height: 10px;"></span>
- <button v-on:click.prevent="get()">Get graph</button>
-</div >
-            <div >
+            <!-- <div style="background-color: 	#E0E0E0"> -->
     <canvas id='api-chart'></canvas>
-            </div>
+            <!-- </div> -->
+             <br/>
+    <br/>
+</div>
 </div>
 </template>
 
@@ -33,7 +45,7 @@
 <script>
 import Datepicker from 'vuejs-datepicker';
 import moment from 'moment'
-
+import singleLineIntro from '../Introductions/single-line-intro.vue'
   
 export default {
   
@@ -58,7 +70,8 @@ export default {
     },
    
     components:{
-        Datepicker
+        Datepicker,
+        'singleLineIntro': singleLineIntro
     },
     methods:{
         changelocation(){
@@ -166,7 +179,7 @@ export default {
                 
             })
             // mytempchart.reset()
-            //  this.updateChart(mytempchart, tempdata)
+            // this.updateChart(mytempchart, tempdata)
 
         }},
     
