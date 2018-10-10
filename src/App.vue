@@ -9,7 +9,7 @@
     <linegraph></linegraph>
     <!-- <d3jsgraph></d3jsgraph> -->
     <sankeydiagram></sankeydiagram>
-    <resBarGraph></resBarGraph>
+    <resCarousel></resCarousel>
   
     
   </div>
@@ -26,7 +26,7 @@ import tip1 from './energy-tips/tip1.vue'
 import osm from './graphs/osm.vue'
 import welcomescreen from './graphs/welcome.vue'
 import sankeydiagram from './graphs/sankeyChart.vue'
-import resBarGraph from './graphs/res-bar-graph.vue'
+import resCarousel from './graphs/res-carousel.vue'
 
 export default {
 
@@ -39,7 +39,7 @@ export default {
      'osm': osm,
      'welcomescreen': welcomescreen,
      'sankeydiagram' : sankeydiagram,
-     'resBarGraph': resBarGraph
+     'resCarousel': resCarousel
   },
 
   name: 'app',

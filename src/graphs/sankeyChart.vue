@@ -6,8 +6,8 @@
         <br>
     <br>
     <chart-sankey :data = 'chartData' :config = 'chartConfig'></chart-sankey>
-    <!-- <br> -->
-    <!-- <br> -->
+    <br>
+    <br>
   </div>
    
   </div>
@@ -63,7 +63,7 @@
             // returns the d3 sankey generator
             .sankey()
             // now configure the d3 sankey generator through method chaining
-            .nodePadding(50)
+            .nodePadding(100)
 
             chart 
             .sankey()
