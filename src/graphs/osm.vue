@@ -90,17 +90,18 @@ export default {
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         });
                 var polygon = L.polygon([
-      [-26.18887, 28.02767],
-      [-26.18637, 28.02857],
-      [-26.18667, 28.02547]
+      [-26.189415, 28.024832],
+      [-26.188404, 28.024680],
+      [-26.188495, 28.023780],
+      [-26.189523, 28.023935]
     ]).addTo(this.map)
-    polygon.bindPopup('Chamber of Mines: \n\n Energy Consumption:120kW/Day')
+    polygon.bindPopup('PIMD Building: \n\n Energy Consumption:120kW/Day')
 
                 L.geoJson(this.layers,{
                 style: function(feature) {
                     switch (feature.name) {
-                        case 'boundaries': return {color: "#ff0000"};
-                        case 'test1':   return {color: "#0000ff"};
+                        case 'boundaries': return {color: "red"};
+                        case 'test1':   return {color: "red"};
                     }
                 }
             }).addTo(this.map)

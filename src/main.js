@@ -17,6 +17,7 @@ Vue.use(datePicker);
 Vue.use(VueResource)
 Vue.use(BootstrapVue) 
 Vue.use(VueRouter)
+
 Vue.component('v-select', vSelect)
 //Vue.component('graphdata',graphdata)
 

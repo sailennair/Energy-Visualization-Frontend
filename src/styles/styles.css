@@ -33,8 +33,10 @@
     height: 800px;
     width: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) ,url('../assets/wits-image.png');
-    background-repeat: round;
-    z-index: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
 
   /* -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
@@ -49,7 +51,7 @@
     text-align: left;
     font-weight: 400;
     font-size: 80px;
-    z-index: 2;
+
 
     color: white;
     padding-top: 40px;
@@ -86,4 +88,17 @@
 
 .single-line-chart{
     background-color: white;
+}
+
+.junction-intro{
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    font-weight: 400;
+    font-size: 80px;
+
+
+    color: #383838;
+    padding-top: 60px;
+    padding-bottom: 30px;
 }

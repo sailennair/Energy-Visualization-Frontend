@@ -1,8 +1,7 @@
-
 <template>
   <div>
   <div >
-    <barChartExample class="chart"></barChartExample>
+    <JunctionBlockBar class="chart"></JunctionBlockBar>
   </div>
   </div>
 </template>
@@ -11,10 +10,10 @@
 
 <script>
 
-import barChartExample from '../Components/res-bar-graph'
+import JunctionBlockBar from '../Components/junction-block-bar-graph'
 export default {
   components:{
-    'barChartExample': barChartExample
+    'JunctionBlockBar': JunctionBlockBar
   }
 }
 </script>

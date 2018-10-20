@@ -20,6 +20,7 @@
     "vue": "^2.5.3",
     "vue-bootstrap-datetimepicker": "^5.0.1",
     "vue-carousel": "^0.14.0",
+    "vue-chartjs": "^3.4.0",
     "vue-d2b": "^1.0.14",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1",
