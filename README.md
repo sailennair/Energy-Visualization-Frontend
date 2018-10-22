@@ -15,7 +15,7 @@ npm run dev
 npm run build
 
 ```
-The application will be running at "120.0.0.1/8080"
+The application will be running at "120.0.0.1:8080/"
 
 ## Visuals
 5 Types of visuals are displayed:
